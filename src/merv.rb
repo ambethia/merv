@@ -1,25 +1,28 @@
 class Merv
-  HOST = 'localhost' # TODO: load these from config
   PORT = '8000'
 
   def initialize
-    @server = TCPServer.new(HOST, PORT)
-    puts "Listening on #{HOST}:#{PORT}..."
+    @server = TCPServer.new(PORT)
+    puts "Listening on port #{PORT}..."
+  end
+
+  def handle(socket)
+    puts socket.gets
+    response = "Hello World!\n"
+    socket.print [
+       "HTTP/1.1 200 OK",
+       "Content-Type: text/plain",
+       "Content-Length: #{response.bytesize}",
+       "Connection: close",
+       "",
+       response
+    ].join("\r\n")
   end
 
   def run
     while socket = @server.accept do
       begin
-        puts socket.gets
-        response = "Hello World!\n"
-        socket.print [
-          "HTTP/1.1 200 OK",
-          "Content-Type: text/plain",
-          "Content-Length: #{response.bytesize}",
-          "Connection: close",
-          "",
-          response
-        ].join("\r\n")
+        handle socket
       rescue Exception => e
         puts "Error: #{e.message}"
         puts "> " + e.backtrace.join("\n> ")

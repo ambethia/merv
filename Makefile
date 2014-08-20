@@ -3,7 +3,7 @@ MRUBY 	= vendor/mruby
 MRBC 		= $(MRUBY)/bin/mrbc
 TARGET  = merv
 
-all: bin/merv test
+all: bin/merv
 
 bin/$(TARGET): $(MRUBY)/bin/mrbc build/main.o
 	$(CC) $(CFLAGS) -o bin/$(TARGET) build/main.o -l mruby -L $(MRUBY)/build/host/lib
