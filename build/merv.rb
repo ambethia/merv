@@ -1,3 +1,4 @@
-# File: /Users/ambethia/Projects/mruby/merv/src/main.rb
-puts "Hello, world!"
+# File: /Users/ambethia/Projects/mruby/merv/src/merv.rb
+class Merv
+end
 

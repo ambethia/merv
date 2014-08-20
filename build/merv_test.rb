@@ -1,12 +1,13 @@
-# File: /Users/ambethia/Projects/mruby/merv/src/main.rb
-puts "Hello, world!"
+# File: /Users/ambethia/Projects/mruby/merv/src/merv.rb
+class Merv
+end
 
 # File: /Users/ambethia/Projects/mruby/merv/test/merv_test.rb
 
-class Test4MTest < MTest::Unit::TestCase
-  def test_assert
-    assert(true)
-    assert(true, 'true sample test')
+class MervTest < MTest::Unit::TestCase
+
+  def test_sanity
+    assert Merv.new.is_a?(Merv)
   end
 end
 

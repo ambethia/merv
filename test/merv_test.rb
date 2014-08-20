@@ -1,9 +1,9 @@
-#= require ../src/main
+#= require ../src/merv
 
-class Test4MTest < MTest::Unit::TestCase
-  def test_assert
-    assert(true)
-    assert(true, 'true sample test')
+class MervTest < MTest::Unit::TestCase
+
+  def test_sanity
+    assert Merv.new.is_a?(Merv)
   end
 end
 

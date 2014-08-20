@@ -1,1 +1,2 @@
-puts "Hello, world!"
+class Merv
+end
