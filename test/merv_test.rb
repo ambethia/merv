@@ -2,8 +2,12 @@
 
 class MervTest < MTest::Unit::TestCase
 
+  def setup
+    @merv = Merv.new
+  end
+
   def test_sanity
-    assert Merv.new.is_a?(Merv)
+    assert @merv.is_a?(Merv)
   end
 end
 

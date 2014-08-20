@@ -34,4 +34,4 @@ clean:
 	cd $(MRUBY) && git reset --hard && git clean -fdx
 	rm -f bin/merv build/*.o build/*.h build/*.rb
 
-.PHONY: all mruby mrubymix test clean
+.PHONY: all test clean
