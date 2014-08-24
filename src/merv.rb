@@ -26,6 +26,7 @@ class Merv
       rescue Exception => e
         puts "Error: #{e.message}"
         puts "> " + e.backtrace.join("\n> ")
+        raise e
       ensure
         socket.close
       end
